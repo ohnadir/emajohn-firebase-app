@@ -4,7 +4,7 @@ import React from 'react';
 import Rating from 'react-rating';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 
-const Product = ({ product }) => {
+const Product = ({ product, handleAddToCart }) => {
     const { img, name, price, rating, seller, stock } = product;
     let newName;
     if (name.length > 26) {
@@ -34,7 +34,7 @@ const Product = ({ product }) => {
                         </span>
                     </p>
                 </div>
-                <button className='bg-[#FFBC97] w-full flex justify-center items-center p-1'>
+                <button onClick={()=> handleAddToCart(product)} className='bg-[#F55353] text-white w-full flex justify-center items-center p-1'>
                     <span className='mr-2'>Add to Cart</span> <AiOutlineShoppingCart></AiOutlineShoppingCart>
                 </button>
             </div>

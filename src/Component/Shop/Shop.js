@@ -10,9 +10,12 @@ const Shop = () => {
             .then(res => res.json())
             .then(data => {
                 setProducts(data)
-                console.log(data);
             });
     }, []);
+    const handleAddToCart = (selectedItem) => {
+        setCart([...cart, selectedItem]);
+        console.log(cart);
+    }
     return (
         <div>
             <div className='flex flex-col-reverse md:flex-row mx-auto max-w-5xl'>
@@ -21,12 +24,14 @@ const Shop = () => {
                         products.map(product => <Product
                             key={product.id}
                             product={product}
-
+                            handleAddToCart={handleAddToCart}
                         ></Product>)
                     }
                 </div>
                 <div className="cart bg-[#FFBC97] sticky top-0  md:w-[250px] ">
-                    <Cart></Cart>
+                    <Cart
+                        cart={cart}
+                    ></Cart>
                 </div>
             </div>
         </div>
