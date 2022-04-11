@@ -10,6 +10,7 @@ const Review = () => {
     const handleRemoveItem = (selectedItem)=> {
         setCart(cart.filter(item => item.id !== selectedItem.id));
     }
+    console.log(cart);
     return (
         <div>
             <div>

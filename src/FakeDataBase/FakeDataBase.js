@@ -1,7 +1,7 @@
 const addToDb = (id) => {
     let shoppingCart = {};
 
-    let quantity = shoppingCart[id];
+    const quantity = shoppingCart[id];
     if (quantity) {
         const newQuantity = quantity + 1;
         shoppingCart[id] = newQuantity;

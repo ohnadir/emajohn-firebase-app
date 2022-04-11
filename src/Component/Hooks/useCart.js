@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { getStoredCart } from '../../FakeDataBase/FakeDataBase';
 
 const useCart = (products) => {
+    
     const [cart, setCart] = useState([]);
     useEffect(() => {
         const storedCart = getStoredCart();

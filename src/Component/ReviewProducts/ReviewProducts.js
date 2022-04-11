@@ -2,7 +2,6 @@ import React from 'react';
 import { BsTrashFill } from 'react-icons/bs';
 
 const ReviewProducts = ({ product, handleRemoveItem }) => {
-    console.log(product);
     const {name, img, price, shipping} = product;
     return (
         <div className='flex gap-8 items-center border p-2'>

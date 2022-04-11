@@ -8,12 +8,15 @@ import Product from '../Product/Product';
 const Shop = () => {
     const [products] = useProducts([]);
     const [cart, setCart] = useCart(products);
+    console.log(cart);
+
+
     const handleAddToCart = (selectedItem) => {
         let newCart = [];
-        const exists = products.find(item => item.id === selectedItem.id);
+        const exists = cart.find(item => item.id === selectedItem.id);
         if (!exists) {
             selectedItem.quantity = 1;
-            newCart = [...cart, selectedItem.id];
+            newCart = [...cart, selectedItem];
         } else {
             const rest = cart.filter(item => item.id !== selectedItem.id);
             exists.quantity = exists.quantity + 1;
